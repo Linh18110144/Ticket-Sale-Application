@@ -1,0 +1,158 @@
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+body{
+  background-color: #E5E5E5;
+  max-width: 100%;
+  padding-left: 33px;
+  padding-right: 32px;
+}
+
+.App-logo{
+  width:133px;
+  height: 58px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 26px;
+  color: #1E0D03;  
+  padding-left: 15px;
+}
+
+.menu{
+  margin-top: 17px;
+  width: 252px;
+  min-height:100%;
+  position:relative;
+  float: left;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #1E0D03;
+}
+
+.list-menu{
+  margin-top: 59px;
+  padding-bottom:60px;
+}
+
+.button-menu{
+  width: 90%;
+  height: 56px;
+  /* background-color: Transparent; */
+  background-repeat:no-repeat;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding-left: 27px;
+  opacity: 0.6;
+}
+
+.nav{
+  margin-top: 17px;
+  width:calc(100% - 252px);
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.body{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  width:calc(100% - 300px);
+  min-height: 645px;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.Search-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* padding: 10px 16px; */
+  /* padding-left: 15px;
+  padding-right: 15px; */
+  width: 437px;
+  height: 48px;
+  
+  background: #EDEDED;
+  border-radius: 12px;
+
+}
+
+.Search{
+  padding-left: 10px;
+  border: none;
+  outline:none;
+  background: #EDEDED;
+  width: 90%;
+}
+
+.NotiMail{
+  width: 144px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+.footer{
+  position:absolute;
+  bottom:0;
+  width: 252px;
+  height:40px;
+  font-size:14px;
+  font-weight:'normal';
+  opacity: 0.6;  
+}
+
+.nav-control{
+  margin-top: 17px;
+  width:100%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.group-button{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: 2px solid #FF993C;
+  /* 18 bold */
+
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  border-radius: 8px;
+  color: #FF993C;
+  padding: 0 15px;
+  /* border-color: #FF993C; */
+  margin: 0px 10px;
+}
+
+.table{
+  border: 1px solid;
+  border-radius: 8px;
+  border-collapse:collapse;
+}
