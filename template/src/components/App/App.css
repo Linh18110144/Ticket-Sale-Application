@@ -12,6 +12,10 @@ body{
   padding-right: 32px;
 }
 
+#root{
+  height: 100%;
+}
+
 .App-logo{
   width:133px;
   height: 58px;
@@ -26,9 +30,9 @@ body{
 }
 
 .menu{
-  margin-top: 17px;
+  padding-top: 17px;
   width: 252px;
-  min-height:100%;
+  min-height:calc(100% - 60px);
   position:relative;
   float: left;
   font-weight: 500;
@@ -64,18 +68,6 @@ body{
   justify-content: space-between;
 }
 
-.body{
-  background-color: #FFFFFF;
-  border-radius: 24px;
-  width:calc(100% - 300px);
-  min-height: 645px;
-  float: left;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
 .Search-bar{
   display: flex;
   flex-direction: row;
@@ -109,10 +101,10 @@ body{
 }
 
 .footer{
-  position:absolute;
+  position:relative;
   bottom:0;
   width: 252px;
-  height:40px;
+  height:0px;
   font-size:14px;
   font-weight:'normal';
   opacity: 0.6;  
@@ -148,11 +140,30 @@ body{
   color: #FF993C;
   padding: 0 15px;
   /* border-color: #FF993C; */
-  margin: 0px 10px;
+  /* margin: 0px 10px; */
 }
+
+.body{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  width:calc(100% - 300px);
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+  min-height:calc(100% - 114px);
+}
+
 
 .table{
   border: 1px solid;
-  border-radius: 8px;
-  border-collapse:collapse;
+  /* border-collapse:collapse; */
+  width: 100%;
+  max-height: 576px;
+  padding-top: 14px;
 }
+
+tr:nth-child(odd) {background-color: #F1F4F8;}
+tr:first-child th:first-child { border-top-left-radius: 8px; }
+tr:first-child th:last-child { border-top-right-radius: 8px; }
