@@ -1,6 +1,7 @@
 .ant-picker {
     border: 1px solid #727288;
-    background-color: #fafafa;
+    border-radius: 8px;
+    background-color: #FFFFFF;
     .ant-picker-suffix {
         color: #ff7506;
     }
@@ -9,4 +10,15 @@
     }
 }
 
+.site-calendar-customize-header-wrapper {
+    width: 300px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5%;
+    .ant-picker-body{
+        background-color: white !important;
+    }
+    .ant-picker-calendar-date-value{
+        border-radius: 50%;
+    }
+  }
 

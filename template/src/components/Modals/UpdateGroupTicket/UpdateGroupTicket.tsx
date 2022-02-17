@@ -1,9 +1,11 @@
-import React from "react"
+import { Button, Checkbox, DatePicker, Dropdown, Input, Menu, Space, TimePicker } from "antd";
+import React from "react";
 import "antd/dist/antd.css"
 import '../style.scss'
-import { DatePicker, TimePicker, Space, Input, Checkbox, Dropdown, Menu, Button } from "antd"
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined } from "@ant-design/icons";
 import ButtonGroup from "antd/lib/button/button-group";
+// import 'moment/locale/vi';
+// import locale from 'antd/es/date-picker/locale/vi_VN';
 const menu = (
     <Menu>
         <Menu.Item key="1"  >
@@ -16,21 +18,27 @@ const menu = (
     </Menu>
 );
 
-const AddGroupTicket = () => {
+const UpdateGroupTicket = () => {
     return (
         <>
             <Space direction="vertical">
-                <h2>Thêm gói vé</h2>
-                <Space direction="vertical">
-                    Tên gói vé
-                    <Input />
+                <h2>Cập nhật thông tin gói vé</h2>
+                <Space>
+                    <Space direction="vertical">
+                        Mã sự kiện
+                        <Input />
+                    </Space>
+                    <Space direction="vertical">
+                        Tên sự kiện
+                        <Input />
+                    </Space>
                 </Space>
 
                 <Space>
                     <Space direction="vertical">
                         Ngày áp dụng
                         <Space>
-                            <DatePicker
+                            <DatePicker 
                                 picker="date"
                                 format="DD/MM/YYYY"
                             />
@@ -48,7 +56,7 @@ const AddGroupTicket = () => {
                         </Space>
                     </Space>
                 </Space>
-              
+
                 <Space direction="vertical">
                     Giá vé áp dụng
                     <Checkbox>Vé lẻ (vnđ/vé) với giá
@@ -69,7 +77,7 @@ const AddGroupTicket = () => {
                 </Space>
 
                 <ButtonGroup>
-                    <Button>Hủy </Button>
+                    <Button>Hủy</Button>
                     <Button>Lưu</Button>
                 </ButtonGroup>
             </Space>
@@ -77,4 +85,4 @@ const AddGroupTicket = () => {
     )
 }
 
-export default React.memo(AddGroupTicket)
+export default React.memo(UpdateGroupTicket);

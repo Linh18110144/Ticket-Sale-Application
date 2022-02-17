@@ -11,7 +11,6 @@ import Nav from '../Nav/Nav';
 function App() {
   return (
     
-
       <BrowserRouter>
         <Menu />
         <Nav/>
