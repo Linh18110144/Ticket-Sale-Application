@@ -8,7 +8,7 @@ const NotiMailConponent =()=>{
         <div className="NotiMail">
             <Icon.Mail className="Mail-icon"/>
             <Icon.Bell className="Bell-icon"/>
-            <Avatar src={avatar} />
+            <Avatar src={avatar} size={48} />
         </div>
     )
 }

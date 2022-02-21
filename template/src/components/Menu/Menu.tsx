@@ -20,20 +20,20 @@ const Menu = () => {
                 </div>
                 <div className='list-menu'>
                     <div className='button-menu'>
-                        <Icon component={() => (<img src={home} />)} />
+                        <Icon component={() => (<img src={home} alt='' />)} />
                         <Link className='link' to='/'>Trang chủ</Link>
                     </div>
                     <div className='button-menu'>
-                        <Icon component={() => (<img src={ticket} />)} />
+                        <Icon component={() => (<img src={ticket} alt='' />)} />
                         <Link className='link' to='/manage'>Quản lý vé</Link>
                     </div>
 
                     <div className='button-menu'>
-                        <Icon component={() => (<img src={control} />)} />
+                        <Icon component={() => (<img src={control} alt='' />)} />
                         <Link className='link' to='/control'>Đối soát vé</Link>
                     </div>
                     <div className='button-menu'>
-                        <Icon component={() => (<img src={setting} />)} />
+                        <Icon component={() => (<img src={setting} alt='' />)} />
                         <Link className='link' to='/setting'>Cài đặt</Link>
                     </div>
                     <div style={{ paddingLeft: 80, opacity: 0.6 }}>

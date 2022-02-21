@@ -9,7 +9,7 @@ const SearchComponent = () => {
                 type="text"
                 placeholder="Search"
             />
-            <Icon.Search className="Search-icon"/>
+            <Icon.Search/>
         </div>
     )
 }

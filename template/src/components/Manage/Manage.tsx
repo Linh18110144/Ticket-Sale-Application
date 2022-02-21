@@ -3,7 +3,8 @@ import SearchComponent from "../../shared/components/SearchComponent"
 import Icon from "@ant-design/icons"
 import filter from "../../assets/icon/filter.svg"
 import Table from "../Table/Table"
-import { Button, Modal } from "antd"
+import { Modal } from "antd"
+import FilterTicket from "../Modals/FilterTicket/FilterTicket"
 const Home = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -23,20 +24,24 @@ const Home = () => {
             <h1>Danh sách vé</h1>
             <div className="nav-control">
                 <SearchComponent />
-                <div className="group-button">
-                    <Button type="primary" onClick={showModal} >
-                        <Icon style={{ paddingRight: 5 }} component={() => (<img src={filter} />)} />
+                <div style={{ width: 110 }}>
+                    {/* <Button className="button" onClick={showModal} >
+                        <Icon style={{ paddingRight: 5 }} component={() => (<img src={filter} alt='' />)} />
                         Lọc vé
                     </Button>
-                    <button className="button">
+                    <Button className="button">
                         Xuất file (.csv)
-                    </button>
+                    </Button> */}
 
                 </div>
-                <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                <button type="button" className="button" onClick={showModal}>
+                    <Icon style={{ paddingRight: 5 }} component={() => (<img src={filter} alt='' />)} />
+                    Lọc vé
+                </button>
+                <button type="button" className="button">Xuất file (.csv)</button>
+
+                <Modal width={600} visible={isModalVisible} closable={false} footer={null} onCancel={handleCancel} style={{marginTop:-20}}>
+                    <FilterTicket />
                 </Modal>
             </div>
             <Table />
