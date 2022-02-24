@@ -1,11 +1,17 @@
 import React from "react"
 import "antd/dist/antd.css"
-import { Calendar, Checkbox, Col, Radio, Typography } from "antd"
+import { Calendar, Col, Radio, Typography } from "antd"
 import '../Modals/style.scss'
 import 'moment/locale/vi';
 import locale from 'antd/es/date-picker/locale/vi_VN';
 
 const Calender = () => {
+    const [value, setValue] = React.useState('month');
+
+    const onChange = e => {
+        setValue(e.target.value);
+    };
+
     return (
         <div className="site-calendar-customize-header-wrapper">
             <Calendar
@@ -16,9 +22,9 @@ const Calender = () => {
                         <div style={{ padding: 8 }}>
                             <Typography.Title level={4}>Custom header</Typography.Title>
                             <Col>
-                                <Radio.Group size="small" >
+                                <Radio.Group size="small" value={value} onChange={onChange}>
                                     <Radio value="month">Theo ngày</Radio>
-                                    <Radio value="year">Theo tuần</Radio>
+                                    <Radio value="week">Theo tuần</Radio>
                                 </Radio.Group>
                             </Col>
                         </div>

@@ -1,24 +1,14 @@
-import { Line, Pie } from "@ant-design/charts"
-import { DatePicker, Space } from "antd";
+import { Area, Pie } from "@ant-design/charts"
+import { Button, Dropdown, Space } from "antd";
 import React, { useEffect, useState } from "react"
 import locale from 'antd/es/date-picker/locale/vi_VN';
+import Calender from "../Calender/Calender";
 
+const menu=(
+    <Calender/>
+)
 
 const DemoLine = () => {
-    // const [data, setData] = useState([]);
-
-    // useEffect(() => {
-    //     asyncFetch();
-    // }, []);
-
-    // const asyncFetch = () => {
-    //     fetch('https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json')
-    //         .then((response) => response.json())
-    //         .then((json) => setData(json))
-    //         .catch((error) => {
-    //             console.log('fetch data failed', error);
-    //         });
-    // };
 
     const data = [
         {
@@ -70,12 +60,12 @@ const DemoLine = () => {
         smooth: true,
         areaStyle: () => {
             return {
-                fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
+                fill: 'l(270) 0:#ffffff 1:#FAA05F ',
             };
         },
     };
 
-    return <Line {...config} />;
+    return <Area {...config} />;
 };
 
 const DemoPie = () => {
@@ -109,11 +99,12 @@ const Home = () => {
 
             <Space>
                 <div>Doanh thu</div>
-                <DatePicker
-                    picker="date"
-                    format="MM/YYYY"
-                    locale={locale}
-                />
+                <Dropdown overlay={menu}>
+                        <Button style={{ borderRadius: 8 }}>
+                            Đang áp dụng 
+                            
+                        </Button>
+                    </Dropdown>
             </Space>
             <div style={{ height: 200 }}>
                 <DemoLine />
