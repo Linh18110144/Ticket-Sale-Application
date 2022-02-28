@@ -101,7 +101,7 @@ const Home = () => {
                 <div>Doanh thu</div>
                 <Dropdown overlay={menu}>
                         <Button style={{ borderRadius: 8 }}>
-                            Đang áp dụng 
+                            Tháng 2, 2022
                             
                         </Button>
                     </Dropdown>

@@ -20,7 +20,7 @@ const Calender = () => {
                 headerRender={() => {
                     return (
                         <div style={{ padding: 8 }}>
-                            <Typography.Title level={4}>Custom header</Typography.Title>
+                            <Typography.Title level={4}></Typography.Title>
                             <Col>
                                 <Radio.Group size="small" value={value} onChange={onChange}>
                                     <Radio value="month">Theo ngày</Radio>
