@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import "antd/dist/antd.css"
 import '../style.scss'
 import { DatePicker, TimePicker, Space, Input, Checkbox, Dropdown, Menu, Button, Row, Col } from "antd"
 import { DownOutlined } from '@ant-design/icons';
 import ButtonGroup from "antd/lib/button/button-group";
+import db from '../../../database';
+import { collection, addDoc } from "firebase/firestore"; 
+
 const menu = (
     <Menu>
         <Menu.Item key="1"  >
@@ -16,7 +19,22 @@ const menu = (
     </Menu>
 );
 
-const AddGroupTicket = () => {
+ const AddGroupTicket = () => {
+    const [value, setValue] = useState("");
+
+    const submit = async ()=>{
+        try {
+            const docRef = await addDoc(collection(db, "groupTicket"), {
+              name:value,
+            });
+            console.log("Document written with ID: ", docRef.id);
+            setValue("");
+
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+
+    }
     return (
         <>
             <Space direction="vertical">
@@ -24,7 +42,12 @@ const AddGroupTicket = () => {
                 <Space direction="vertical">
                     <label className="required"> Tên gói vé</label>
 
-                    <Input required placeholder="Nhập tên gói vé" style={{ width: "60%" }} />
+                    <Input required
+                        placeholder="Nhập tên gói vé"
+                        style={{ width: "60%" }}
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                    />
                 </Space>
 
                 {/* <Space>
@@ -56,7 +79,7 @@ const AddGroupTicket = () => {
                 </Space>
             </Space> */}
 
-                <Row style={{marginTop:10}}>
+                <Row style={{ marginTop: 10 }}>
                     <Col span={12}>
                         <Space direction="vertical">
                             Ngày áp dụng
@@ -90,7 +113,7 @@ const AddGroupTicket = () => {
                     </Col>
                 </Row>
 
-                <Space direction="vertical" style={{marginTop:10}}>
+                <Space direction="vertical" style={{ marginTop: 10 }}>
                     Giá vé áp dụng
                     <Checkbox>Vé lẻ (vnđ/vé) với giá
                         <Input className="input-small" placeholder="Giá vé" /> /vé
@@ -109,11 +132,11 @@ const AddGroupTicket = () => {
                     </Dropdown>
                 </Space>
                 <div className="annotate">là thông tin bắt buộc</div>
-                
+
                 <div style={{ width: 300, marginTop: 20, display: "block", marginLeft: "auto", marginRight: "auto" }} >
-                    <ButtonGroup style={{display:"flex", justifyContent:"space-between"}}>
-                        <button type="button" className="button" style={{ width: "45%",display: "block", textAlign: "center", lineHeight:2 }}>Hủy </button>
-                        <button type="button" className="button-on" style={{ width: "45%",display: "block", textAlign: "center", lineHeight:2 }}>Lưu</button>
+                    <ButtonGroup style={{ display: "flex", justifyContent: "space-between" }}>
+                        <button type="button" className="button" style={{ width: "45%", display: "block", textAlign: "center", lineHeight: 2 }}>Hủy </button>
+                        <button type="button" className="button-on" style={{ width: "45%", display: "block", textAlign: "center", lineHeight: 2 }} onClick={submit}>Lưu</button>
                     </ButtonGroup>
                 </div>
 
