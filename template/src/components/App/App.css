@@ -120,12 +120,8 @@ body{
 }
 
 .group-button{
-  display: flex;
-  flex-direction: row;
-
+  max-width: 600px;
 }
-
-
 
 .body{
   background-color: #FFFFFF;

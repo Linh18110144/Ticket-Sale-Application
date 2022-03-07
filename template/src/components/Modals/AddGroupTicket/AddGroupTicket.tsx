@@ -5,7 +5,7 @@ import { DatePicker, TimePicker, Space, Input, Checkbox, Dropdown, Menu, Button,
 import { DownOutlined } from '@ant-design/icons';
 import ButtonGroup from "antd/lib/button/button-group";
 import db from '../../../database';
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc } from "firebase/firestore";
 
 const menu = (
     <Menu>
@@ -19,20 +19,23 @@ const menu = (
     </Menu>
 );
 
- const AddGroupTicket = () => {
-    const [value, setValue] = useState("");
+const AddGroupTicket = () => {
+    const [code, setCode] = useState("");
+    const [date, setDate] = useState();
 
-    const submit = async ()=>{
+    const submit = async () => {
         try {
+            console.log(date);
             const docRef = await addDoc(collection(db, "groupTicket"), {
-              name:value,
+                name: code,
+
             });
             console.log("Document written with ID: ", docRef.id);
-            setValue("");
+            setCode("");
 
-          } catch (e) {
+        } catch (e) {
             console.error("Error adding document: ", e);
-          }
+        }
 
     }
     return (
@@ -45,39 +48,10 @@ const menu = (
                     <Input required
                         placeholder="Nhập tên gói vé"
                         style={{ width: "60%" }}
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
+                        value={code}
+                        onChange={(e) => setCode(e.target.value)}
                     />
                 </Space>
-
-                {/* <Space>
-                <Space direction="vertical">
-                    Ngày áp dụng
-                    <Space>
-                        <DatePicker
-                            picker="date"
-                            format="DD/MM/YYYY"
-                            placeholder="dd/mm/yy"
-                        />
-                        <TimePicker
-                            placeholder="hh:mm:ss"
-                        />
-                    </Space>
-                </Space>
-                <Space direction="vertical">
-                    Ngày hết hạn
-                    <Space>
-                        <DatePicker
-                            picker="date"
-                            format="DD/MM/YYYY"
-                            placeholder="dd/mm/yy"
-                        />
-                        <TimePicker
-                            placeholder="hh:mm:ss"
-                        />
-                    </Space>
-                </Space>
-            </Space> */}
 
                 <Row style={{ marginTop: 10 }}>
                     <Col span={12}>
@@ -88,6 +62,9 @@ const menu = (
                                     picker="date"
                                     format="DD/MM/YYYY"
                                     placeholder="dd/mm/yy"
+                                    value={date}
+                                    onChange={(e) => setCode(e.format  )}
+
                                 />
                                 <TimePicker
                                     placeholder="hh:mm:ss"

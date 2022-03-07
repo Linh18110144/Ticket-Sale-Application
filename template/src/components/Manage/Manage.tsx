@@ -5,6 +5,7 @@ import filter from "../../assets/icon/filter.svg"
 import Table from "../Table/Table"
 import { Modal } from "antd"
 import FilterTicket from "../Modals/FilterTicket/FilterTicket"
+import ButtonGroup from "antd/lib/button/button-group"
 const Home = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -24,23 +25,17 @@ const Home = () => {
             <h1>Danh sách vé</h1>
             <div className="nav-control">
                 <SearchComponent />
-                <div style={{ width: 110 }}>
-                    {/* <Button className="button" onClick={showModal} >
+                <div style={{ width: 280, minHeight:46}} >
+
+                <ButtonGroup style={{ display: "flex", justifyContent: "space-between", minHeight:46 }}>
+                    <button type="button" className="button" onClick={showModal}>
                         <Icon style={{ paddingRight: 5 }} component={() => (<img src={filter} alt='' />)} />
                         Lọc vé
-                    </Button>
-                    <Button className="button">
-                        Xuất file (.csv)
-                    </Button> */}
-
+                    </button>
+                    <button type="button" className="button">Xuất file (.csv)</button>
+                </ButtonGroup>
                 </div>
-                <button type="button" className="button" onClick={showModal}>
-                    <Icon style={{ paddingRight: 5 }} component={() => (<img src={filter} alt='' />)} />
-                    Lọc vé
-                </button>
-                <button type="button" className="button">Xuất file (.csv)</button>
-
-                <Modal width={600} visible={isModalVisible} closable={false} footer={null} onCancel={handleCancel} style={{marginTop:-20}}>
+                <Modal width={600} visible={isModalVisible} closable={false} footer={null} onCancel={handleCancel} style={{ marginTop: -20 }}>
                     <FilterTicket />
                 </Modal>
             </div>

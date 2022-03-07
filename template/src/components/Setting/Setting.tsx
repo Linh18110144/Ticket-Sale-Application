@@ -1,4 +1,5 @@
 import { Modal } from "antd"
+import ButtonGroup from "antd/lib/button/button-group";
 import React, { useState } from "react"
 import SearchComponent from "../../shared/components/SearchComponent"
 import AddGroupTicket from "../Modals/AddGroupTicket/AddGroupTicket";
@@ -43,15 +44,20 @@ const Setting = () => {
                     </Button> */}
 
                 </div>
-                
-                <button type="button" className="button" onClick={showModal1}>Xuất file (.csv)</button>
-                <button type="button" className="button-on" onClick={showModal}>
-                    Thêm gói vé
-                </button>
-                <Modal width={758} visible={isModalVisible} closable={false} footer={null} onCancel={handleCancel} style={{marginTop:-70}}>
+                <div style={{ width: 305, minHeight: 46 }} >
+
+                    <ButtonGroup style={{ display: "flex", justifyContent: "space-between", minHeight: 46 }}>
+
+                        <button type="button" className="button" onClick={showModal1}>Xuất file (.csv)</button>
+                        <button type="button" className="button-on" onClick={showModal}>
+                            Thêm gói vé
+                        </button>
+                    </ButtonGroup>
+                </div>
+                <Modal width={758} visible={isModalVisible} closable={false} footer={null} onCancel={handleCancel} style={{ marginTop: -70 }}>
                     <AddGroupTicket />
                 </Modal>
-                <Modal width={758} visible={isModalVisible1} closable={false} footer={null} onCancel={handleCancel1} style={{marginTop:-70}}>
+                <Modal width={758} visible={isModalVisible1} closable={false} footer={null} onCancel={handleCancel1} style={{ marginTop: -70 }}>
                     <UpdateGroupTicket />
                 </Modal>
             </div>
